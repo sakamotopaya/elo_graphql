@@ -51,7 +51,7 @@ namespace Elo.Controllers
         }
 
         [HttpPost("{schemaName}")]
-        public async Task<ActionResult<string>> StoreDemographics([FromRoute] string schemaName, [FromBody] QueryModel query)
+        public async Task<ActionResult<string>> ExecuteGraphQLQuery([FromRoute] string schemaName, [FromBody] QueryModel query)
         {
 
             try
