@@ -1,0 +1,1439 @@
+{
+	"info": {
+		"_postman_id": "3033bd0d-2069-437f-892b-9fabbc220bac",
+		"name": "Adventureworks",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "General",
+			"item": [
+				{
+					"name": "Hello World",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "edb528cf-174e-4b0e-82fd-f55162fc14ac",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"query\" : \"{ yellow }\" }"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/query/hello",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"hello"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EF - Reader Test on Salesperson",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "86d2f5e7-61de-4794-8af8-f20bd4f7ad74",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"query\" : \"{ yellow }\" }"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/adworks/test",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"adworks",
+								"test"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Schema",
+			"item": [
+				{
+					"name": "Graph - Schema for Territories",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ff902a2b-8711-4f44-97ca-353a7ed2903c",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"query\":\n\t\"{\n\t\t\t__type(name: \\\"Query\\\") {\n\t\t\t\t    name\n\t\t\t\t    fields {\n\t\t\t\t    name\n\t\t\t\t    type {\n\t\t\t\t        name\n\t\t\t\t        kind\n\t\t\t\t        fields {\n\t\t\t\t        \tname\n\t\t\t\t    \t\ttype {\n\t\t\t\t    \t\t\tname\n\t\t\t\t    \t\t\tkind\n\t\t\t\t    \t\t}\n\t\t\t\t        }\n\t\t\t\t        ofType {\n\t\t\t\t          name\n\t\t\t\t          kind\n\t\t\t\t        }\n\t\t\t\t     }\n\t\t\t\t   }\n\t\t\t\t }\n\t}\"\n}"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/query/territory?schemaOnly=true",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"territory"
+							],
+							"query": [
+								{
+									"key": "schemaOnly",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Graph - Schema for SalesOrder Details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c368ca06-77f7-4d8e-af5e-760bddb8cca7",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"query\":\n\t\"{\n\t\t\t__type(name: \\\"Query\\\") {\n\t\t\t\t    name\n\t\t\t\t    fields {\n\t\t\t\t    name\n\t\t\t\t    type {\n\t\t\t\t        name\n\t\t\t\t        kind\n\t\t\t\t        fields {\n\t\t\t\t        \tname\n\t\t\t\t    \t\ttype {\n\t\t\t\t    \t\t\tname\n\t\t\t\t    \t\t\tkind\n\t\t\t\t    \t\t}\n\t\t\t\t        }\n\t\t\t\t        ofType {\n\t\t\t\t          name\n\t\t\t\t          kind\n\t\t\t\t        }\n\t\t\t\t     }\n\t\t\t\t   }\n\t\t\t\t }\n\t}\"\n}"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/query/salesorderdetail?schemaOnly=true",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"salesorderdetail"
+							],
+							"query": [
+								{
+									"key": "schemaOnly",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Graph - Schema for SalesOrders",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "96015f8b-1eb9-4970-b594-faa292a1fdb9",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"query\":\n\t\"{\n\t\t\t__type(name: \\\"Query\\\") {\n\t\t\t\t    name\n\t\t\t\t    fields {\n\t\t\t\t    name\n\t\t\t\t    type {\n\t\t\t\t        name\n\t\t\t\t        kind\n\t\t\t\t        fields {\n\t\t\t\t        \tname\n\t\t\t\t        }\n\t\t\t\t        ofType {\n\t\t\t\t          name\n\t\t\t\t          kind\n\t\t\t\t        }\n\t\t\t\t     }\n\t\t\t\t   }\n\t\t\t\t }\n\t}\"\n}"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/query/salesorder?schemaOnly=true",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"salesorder"
+							],
+							"query": [
+								{
+									"key": "schemaOnly",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Graph - Schema for Store Demographics",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ff6ecdff-2f2b-4a80-b5c8-ee9b98299f75",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"query\":\n\t\"{\n\t\t\t__type(name: \\\"Query\\\") {\n\t\t\t\t    name\n\t\t\t\t    fields {\n\t\t\t\t    name\n\t\t\t\t    type {\n\t\t\t\t        name\n\t\t\t\t        kind\n\t\t\t\t        fields {\n\t\t\t\t        \tname\n\t\t\t\t        }\n\t\t\t\t        ofType {\n\t\t\t\t          name\n\t\t\t\t          kind\n\t\t\t\t        }\n\t\t\t\t     }\n\t\t\t\t   }\n\t\t\t\t }\n\t}\"\n}"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/query/storedemographic?schemaOnly=true",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"storedemographic"
+							],
+							"query": [
+								{
+									"key": "schemaOnly",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Graph - Schema for Store",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bccde4ce-f28a-4a5e-b4e0-c262db2e20e7",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"query\":\n\t\"{\n\t\t\t__type(name: \\\"Query\\\") {\n\t\t\t\t    name\n\t\t\t\t    fields {\n\t\t\t\t    name\n\t\t\t\t    type {\n\t\t\t\t        name\n\t\t\t\t        kind\n\t\t\t\t        fields {\n\t\t\t\t        \tname\n\t\t\t\t    \t\ttype {\n\t\t\t\t    \t\t\tname\n\t\t\t\t    \t\t\tkind\n\t\t\t\t    \t\t}\n\t\t\t\t        }\n\t\t\t\t        ofType {\n\t\t\t\t          name\n\t\t\t\t          kind\n\t\t\t\t        }\n\t\t\t\t     }\n\t\t\t\t   }\n\t\t\t\t }\n\t}\"\n}"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/query/store?schemaOnly=true",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"store"
+							],
+							"query": [
+								{
+									"key": "schemaOnly",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Graph - Schema for Salesperson",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "adc27975-e219-4567-901a-1661c9578912",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"query\":\n\t\"{\n\t\t\t__type(name: \\\"Query\\\") {\n\t\t\t\t    name\n\t\t\t\t    fields {\n\t\t\t\t    name\n\t\t\t\t    type {\n\t\t\t\t        name\n\t\t\t\t        kind\n\t\t\t\t        fields {\n\t\t\t\t        \tname\n\t\t\t\t        }\n\t\t\t\t        ofType {\n\t\t\t\t          name\n\t\t\t\t          kind\n\t\t\t\t        }\n\t\t\t\t     }\n\t\t\t\t   }\n\t\t\t\t }\n\t}\"\n}"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/query/salesperson?schemaOnly=true",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"salesperson"
+							],
+							"query": [
+								{
+									"key": "schemaOnly",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Salesperson",
+			"item": [
+				{
+					"name": "EF - All Salespersons",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ba42bc19-19aa-401a-8ef2-d00853d5d6f3",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"query\" : \"{ yellow }\" }"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/adworks/salesperson",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"adworks",
+								"salesperson"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Graph - All Salespersons",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "87890501-7ae5-4fcb-ae01-3b6da0fae150",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"{ \n\tsalesPersons {\n\t\tbusinessEntityId \n\t\tfirstName \n\t\tlastName \n\t\t__typename\n\t} \n}\"}"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/query/salesperson",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"salesperson"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Graph - Salesperson Filtered on 'Stephen'",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5d857498-d0b0-466a-ba14-71de4a8f19d3",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"query\":\"\n\t{ \n\t\tsalesPersons(filter: \\\"stephen\\\" ) \n\t\t{\n\t\t\tbusinessEntityId \n\t\t\tfirstName \n\t\t\tlastName\n\t\t\tterritory {\n\t\t\t\tname\n\t\t\t}\n\t\t} \n\t}\n\"}"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/query/salesperson",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"salesperson"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Graph - Salesperson Filtered by ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5d857498-d0b0-466a-ba14-71de4a8f19d3",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"query\":\"\n\t{ \n\t\tsalesPerson(id: \\\"277\\\" ) \n\t\t{\n\t\t\tbusinessEntityId \n\t\t\tfirstName \n\t\t\tlastName\n\t\t\tterritory {\n\t\t\t\tname\n\t\t\t}\n\t\t} \n\t}\n\"}"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/query/salesperson",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"salesperson"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SalesTerritories",
+			"item": [
+				{
+					"name": "EF - All Territories",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "10bf293c-d08a-493d-a715-9ea1b67ced76",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"query\" : \"{ yellow }\" }"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/adworks/territory",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"adworks",
+								"territory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Graph - All Territories",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c6ebd384-18c5-41cb-9d50-622e4272c529",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"query\":\"\n\t{ \n\t\tterritories(filter: null) \n\t\t{\n\t\t\tterritoryId \n\t\t\tname \n\t\t} \n\t}\n\"}"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/query/territory",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"territory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Graph - Territories Filtered on North",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bc03ad5c-bb39-4578-b391-02b555319e55",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"query\":\"\n\t{ \n\t\tterritories(filter: \\\"north\\\") \n\t\t{\n\t\t\tterritoryId \n\t\t\tname \n\t\t} \n\t}\n\"}"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/query/territory",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"territory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Graph - Territories Filtered by ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bc03ad5c-bb39-4578-b391-02b555319e55",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"query\":\"\n\t{ \n\t\tterritory(id: \\\"3\\\") \n\t\t{\n\t\t\tterritoryId \n\t\t\tname \n\t\t} \n\t}\n\"}"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/query/territory",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"territory"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SalesOrders",
+			"item": [
+				{
+					"name": "EF - All SalesOrders",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "10bf293c-d08a-493d-a715-9ea1b67ced76",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"query\" : \"{ yellow }\" }"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/adworks/salesorder",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"adworks",
+								"salesorder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Graph - All SalesOrders (default paging)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c6ebd384-18c5-41cb-9d50-622e4272c529",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"query\":\"\n\t{ \n\t\tsalesorders(filter: null) \n\t\t{\n\t\t\tsalesOrderId \n\t\t\tpurchaseOrderNumber\n\t\t} \n\t}\n\"}"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/query/salesorder",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"salesorder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Graph - SalesOrders Filtered on PurchaseOrderNumber",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bc03ad5c-bb39-4578-b391-02b555319e55",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"query\":\n\t\"{ \n\t\tsalesorders(filter: \\\"231\\\") \n\t\t{\n\t\t\tsalesOrderId \n\t\t\tpurchaseOrderNumber\n\t\t} \n\t}\"\n}"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/query/salesorder",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"salesorder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Graph - SalesOrders Filtered by ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bc03ad5c-bb39-4578-b391-02b555319e55",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"query\":\"\n\t{ \n\t\tsalesorder(id: \\\"43661\\\") \n\t\t{\n\t\t\tsalesOrderId \n\t\t\tpurchaseOrderNumber \n\t\t\tdetails {\n\t\t\t\tsalesOrderDetailId\n\t\t\t\tproductId\n\t\t\t\tcarrierTrackingNumber\n\t\t\t\tquantity\n\t\t\t\tunitPrice\n\t\t\t\tlineTotal\n\t\t\t}\n\t\t} \n\t}\n\"}"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/query/salesorder",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"salesorder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Graph - All SalesOrders (with paging)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c6ebd384-18c5-41cb-9d50-622e4272c529",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"query\":\"\n\t{ \n\t\tsalesorders(filter: null, pageNumber: 3, recordsPerPage: 5) \n\t\t{\n\t\t\tsalesOrderId \n\t\t\tpurchaseOrderNumber\n\t\t\tdetails {\n\t\t\t\tsalesOrderDetailId\n\t\t\t\tproductId\n\t\t\t\tquantity\n\t\t\t\tunitPrice\n\t\t\t}\n\t\t} \n\t}\n\"}"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/query/salesorder",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"salesorder"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SalesOrder Details",
+			"item": [
+				{
+					"name": "EF - All SalesOrder Details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "10bf293c-d08a-493d-a715-9ea1b67ced76",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"query\" : \"{ yellow }\" }"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/adworks/salesorderdetail?pageNumber=2&pageSize=20",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"adworks",
+								"salesorderdetail"
+							],
+							"query": [
+								{
+									"key": "pageNumber",
+									"value": "2"
+								},
+								{
+									"key": "pageSize",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Graph - SalesOrder Details By SO 44291",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bc03ad5c-bb39-4578-b391-02b555319e55",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"query\":\"\n\t{ \n\t\tsalesorderdetails(salesorderid: \\\"44291\\\") \n\t\t{\n\t\t\tsalesOrderDetailId\n\t\t\tsalesOrderId \n\t\t\tquantity\n\t\t\tunitPrice\n\t\t\tlineTotal\n\t\t} \n\t}\n\"}"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/query/salesorderdetail",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"salesorderdetail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Graph - SalesOrders Filtered by ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bc03ad5c-bb39-4578-b391-02b555319e55",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"query\":\"\n\t{ \n\t\tsalesorder(id: \\\"43661\\\") \n\t\t{\n\t\t\tsalesOrderId \n\t\t\tpurchaseOrderNumber \n\t\t} \n\t}\n\"}"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/query/salesorder",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"salesorder"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Store",
+			"item": [
+				{
+					"name": "EF - All Stores",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "540cd1ef-b161-4263-b61e-86cd01c3747b",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"query\" : \"{ yellow }\" }"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/adworks/store",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"adworks",
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Graph - All Stores",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "d0a7a55b-f40f-4655-a01c-d5021ed6de58",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"query\":\"\n\t{ \n\t\tstores(filter: null ) \n\t\t{\n\t\t\tbusinessEntityId \n\t\t\tname \n\t\t} \n\t}\n\"}"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/query/store",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Graph - Store Filtered on \"Toy\"",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4eae95bc-4a2a-421c-b6cb-350e87789e94",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"query\":\"\n\t{ \n\t\tstores(filter: \\\"toy\\\", pageNumber: 1, \t\trecordsPerPage: 5) \n\t\t{\n\t\t\tbusinessEntityId \n\t\t\tname \n\t\t\tdemographic \n\t\t\t\t{ \n\t\t\t\t\tannualSales \n\t\t\t\t\tbankName \n\t\t\t\t} \n\t\t\tsalesperson \n\t\t\t\t{ \n\t\t\t\t\tfirstName \n\t\t\t\t\tlastName\n\t\t\t\t\temailAddress\n\t\t\t\t\tphoneNumber\n\t\t\t\t} \n\t\t} \n\t}\n\"}"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/query/store",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"store"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Graph - Store by ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4eae95bc-4a2a-421c-b6cb-350e87789e94",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"query\":\"\n\t{ \n\t\tstore(id: \\\"296\\\") \n\t\t{\n\t\t\tbusinessEntityId \n\t\t\tname \n\t\t\tdemographic \n\t\t\t\t{ \n\t\t\t\t\tannualSales \n\t\t\t\t\tbankName \n\t\t\t\t} \n\t\t\tsalesperson \n\t\t\t\t{ \n\t\t\t\t\tfirstName \n\t\t\t\t\tlastName\n\t\t\t\t\temailAddress\n\t\t\t\t\tphoneNumber\n\t\t\t\t} \n\t\t} \n\t}\n\"}"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/query/store",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"store"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "StoreDemographics",
+			"item": [
+				{
+					"name": "EF - All Store Demographics",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "9bc9a40a-ae1f-4256-9980-49b2c888e0bd",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"query\" : \"{ yellow }\" }"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/adworks/storedemographic",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"adworks",
+								"storedemographic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adworks - Store Demographics Filtered",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "25874a2d-25e7-45f7-ae2c-db9f1eb31bb3",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"{ demographics(filter: \\\"store\\\") {businessEntityId name annualSales bankName yearOpened } }\"}"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/query/storedemographic",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"storedemographic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adworks - Store Demographics - All",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2dc4dfce-4ed4-4b2f-be57-62c6fcd1f8be",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"\n\t{ \n\t\tdemographics(filter: null) \n\t\t{\n\t\t\tbusinessEntityId \n\t\t\tname \n\t\t\tannualSales \n\t\t\tbankName \n\t\t\tyearOpened\t\n\t\t} \n\t}\"\n}"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/query/storedemographic",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"storedemographic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Adworks - Store Demographics by ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2dc4dfce-4ed4-4b2f-be57-62c6fcd1f8be",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"query\":\"\n\t{ \n\t\tdemographic(id: \\\"298\\\") \n\t\t{\n\t\t\tbusinessEntityId \n\t\t\tname \n\t\t\tannualSales \n\t\t\tbankName \n\t\t\tyearOpened\t\n\t\t} \n\t}\"\n}"
+						},
+						"url": {
+							"raw": "{{core_url}}/api/query/storedemographic",
+							"host": [
+								"{{core_url}}"
+							],
+							"path": [
+								"api",
+								"query",
+								"storedemographic"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
